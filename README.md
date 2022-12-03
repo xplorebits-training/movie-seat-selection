@@ -1,7 +1,7 @@
 # movie-seat-selection
 Create a simple HTML file that allows user to select seats for a hypothetical movie.
 
-![Mockup](mockup.png "UI Example")
+![Mockup](https://res.cloudinary.com/do8ksgdgc/image/upload/v1670036229/mockup_x412df.png "UI Example")
 
 ## Source code organisation and file name conventions
 Following are the list of files and directories to create for this project:
