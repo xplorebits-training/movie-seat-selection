@@ -1,6 +1,8 @@
 # movie-seat-selection
 Create a simple HTML file that allows user to select seats for a hypothetical movie.
 
+![Mockup](mockup.png "UI Example")
+
 ## Source code organisation and file name conventions
 Following are the list of files and directories to create for this project:
 1. index.html - Contains the front end code
