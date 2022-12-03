@@ -3,7 +3,7 @@ Create a simple HTML file that allows user to select seats for a hypothetical mo
 
 ![Mockup](https://res.cloudinary.com/do8ksgdgc/image/upload/v1670036229/mockup_x412df.png "UI Example")
 
-## Source code organisation and file name conventions
+## Source code structure and file name conventions
 Following are the list of files and directories to create for this project:
 1. index.html - Contains the front end code
 2. assets/main.css - Define all the styles
