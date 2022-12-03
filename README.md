@@ -14,3 +14,6 @@ Following are the list of files and directories to create for this project:
 2. User should be able to book the selected seat.
 3. Once the seat is booked, user should not be able to select for booking.
 4. To book the seat, user should be able to click on the **BOOK** button.
+
+## Resources
+1. Figma design: https://www.figma.com/file/gLVoe1UX6CIVcybDX4EtqW/seat-selection-ui?node-id=1%3A2&t=ZJ8jEntGc8uSyEiq-3
