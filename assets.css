@@ -37,19 +37,23 @@ body{
 .book_button{
 
     background-color: #FFFFFF;
+    border-color: #FFFFFF;
     border-radius: 8px;
-    padding: 14px 18px 8px 18px;
+    padding: 8px 18px 8px 18px;
 
     font-weight: 600;
     text-align: center;
 
+    display: inline-block;
     position:absolute;
-    width:52px;
-    height: 22px;
+    width: 93px;
+    height: 38px;
     left:1328px;
-    top:14px;
+    top: 20px;
     
     color: black;
+
+    cursor: pointer;
 }
 
 .seat{
@@ -59,6 +63,20 @@ body{
     border: 1px solid #000000;
     margin-left: 16px;
     margin-bottom: 16px;
+
+    cursor:pointer;
+}
+
+.seat:hover{
+    background-color: #3A66FF;
+    height:20px;
+    width:20px;
+    border: 1px solid #000000;
+    margin-left: 16px;
+    margin-bottom: 16px;
+    transform: scale(1.2);
+
+    cursor: pointer;
 }
 
 .seatsold{
@@ -68,6 +86,8 @@ body{
     border: 1px solid #000000;
     margin-left: 16px;
     margin-bottom:16px;
+
+    cursor:default;
 }
 
 .block11{
