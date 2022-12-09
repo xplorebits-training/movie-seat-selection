@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 body{
-    height: 1024px;
-    width:1440px;
+    height: 100%;
+    width: 100%;
 }
 .navbar{
     background-color: #3A66FF ;
     display:flex;
     align-items: center;
     height: 64px;
+    width:auto;
 }
 
 .spacer{
@@ -44,12 +45,8 @@ body{
     font-weight: 600;
     text-align: center;
 
-    display: inline-block;
-    position:absolute;
     width: 93px;
     height: 38px;
-    left:1328px;
-    top: 20px;
     
     color: black;
 
