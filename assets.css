@@ -5,13 +5,13 @@ body{
     width: 100%;
     margin: 0px;
 }
+
 .navbar{
     background-color: #3A66FF ;
     display:flex;
     align-items:center;
     height: 64px;
     width:auto;
-
 }
 
 .spacer{
@@ -28,10 +28,7 @@ body{
 }
 
 .SSUI{
-    left: 27px;
-    top: 21px;
-
-    padding:4px 1px 3px 1px;
+    padding: 4px 1px 3px 27px;
 
     color: #FFFFFF;
 }
@@ -42,6 +39,7 @@ body{
     border-color: #FFFFFF;
     border-radius: 8px;
     padding: 8px 18px 8px 18px;
+    margin-right: 19px;
 
     font-weight: 600;
     text-align: center;
