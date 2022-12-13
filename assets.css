@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    min-width: 800px ;
+}
+
+.navbar{
+    background-color: #3A66FF ;
+    display:flex;
+    align-items:center;
+    height: 64px;
+    width:auto;
+    margin: 0 auto;
+}
+
+.spacer{
+    flex-grow: 1;
+}
+
+.SSUI .book_button{
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    line-height: 22px;
+}
+
+.SSUI{
+    padding: 4px 1px 3px 27px;
+
+    color: #FFFFFF;
+}
+
+.book_button{
+
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 8px 18px 8px 18px;
+    margin-right: 19px;
+
+    position: sticky;
+    right: 20px;
+    font-weight: 600;
+    text-align: center;
+
+    width: 93px;
+    height: 38px;
+    
+    color: black;
+
+    cursor: pointer;
+}
+
+.seat_stretch{
+    display: block;
+    min-width: 800px ;
+    margin: auto;
+    padding: 20px 0px;
+}
+
+.seat_stretch > .row {
+    display:flex;
+    margin:10px;
+    align-items:center;
+    justify-content: center;
+    gap:16px;
+
+}
+
+.seat_stretch > .row >.seat{
+      
+    background-color: #FFFFFF;
+    height:20px;
+    width:20px;
+    border: 1px solid #000000;
+}
+
+.seat_stretch > .row >.seatsold{
+
+    background-color: #D9D9D9;
+    height:20px;
+    width:20px;
+    border: 1px solid #000000;
+}
+
+.seat_stretch > .row > .seat:hover{
+    background-color: #3A66FF;
+    height:20px;
+    width:20px;
+    border: 1px solid #000000;
+    transform: scale(1.2);
+
+    cursor: pointer;
+}
