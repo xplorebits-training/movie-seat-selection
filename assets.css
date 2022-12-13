@@ -4,6 +4,7 @@ body{
     height: 100%;
     width: 100%;
     margin: 0px;
+    min-width: 800px ;
 }
 
 .navbar{
@@ -12,6 +13,7 @@ body{
     align-items:center;
     height: 64px;
     width:auto;
+    margin: 0 auto;
 }
 
 .spacer{
@@ -52,81 +54,44 @@ body{
     cursor: pointer;
 }
 
-.seat{
+.seat_stretch{
+    display: block;
+    min-width: 800px ;
+    margin: auto;
+    padding: 20px 0px;
+}
+
+.seat_stretch > .row {
+    display:flex;
+    margin:10px;
+    align-items:center;
+    justify-content: center;
+    gap:16px;
+
+}
+
+.seat_stretch > .row >.seat{
+      
     background-color: #FFFFFF;
     height:20px;
     width:20px;
     border: 1px solid #000000;
-    margin-left: 16px;
-    margin-bottom: 16px;
-
-    cursor:pointer;
 }
 
-.seat:hover{
-    background-color: #3A66FF;
-    height:20px;
-    width:20px;
-    border: 1px solid #000000;
-    margin-left: 16px;
-    margin-bottom: 16px;
-    transform: scale(1.2);
+.seat_stretch > .row >.seatsold{
 
-    cursor: pointer;
-}
-
-.seatsold{
     background-color: #D9D9D9;
     height:20px;
     width:20px;
     border: 1px solid #000000;
-    margin-left: 16px;
-    margin-bottom:16px;
-
-    cursor:default;
 }
 
-.block11{
-    position: absolute;
-    left:348px;
-    top: 96px;
+.seat_stretch > .row > .seat:hover{
+    background-color: #3A66FF;
+    height:20px;
+    width:20px;
+    border: 1px solid #000000;
+    transform: scale(1.2);
+
+    cursor: pointer;
 }
-.block12{
-    position: absolute;
-    left:766px;
-    top: 96px;
-}
-.block21{
-    position:absolute;
-    left:348px;
-    top: 286px;
-}
-.block22{
-    position:absolute;
-    left:766px;
-    top: 286px;
-}
-.block31{
-    position:absolute;
-    left:348px;
-    top: 476px;
-}
-.block32{
-    position:absolute;
-    left:766px;
-    top: 476px;
-}
-.inBlock313456{
-    position:absolute;
-    left:462px;
-    top:552px;
-}
-.inBlock317{
-    position:absolute;
-    left:538px;
-    top:704px;
-}
-.row{
-    display: flex;
-    align-items: stretch;
-} 
