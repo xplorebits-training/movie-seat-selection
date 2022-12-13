@@ -43,6 +43,8 @@ body{
     padding: 8px 18px 8px 18px;
     margin-right: 19px;
 
+    position: sticky;
+    right: 20px;
     font-weight: 600;
     text-align: center;
 
