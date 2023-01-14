@@ -1,13 +1,26 @@
+//import * as fse from "fs-extra"
+
+//import array from "./BookedSeats.json" assert {type:"json"}
+//console.log(array);
+
 // User seat selection
 const userSelection = [];
 // Seats that are already booked
-const bookedSeat = [{ seatId: "1-0" }, { seatId: "1-1" }, { seatId: "1-6" }];
+const bookedSeat =[];
+
+
+let file = "C:\\Users\\nalammanasa\\Desktop\\Documents\\GitHub\\movie-seat-selection\\BookedSeats.json";
+fetch(file)
+  .then(response =>response.json())
+  .then(function(data){
+    bookedSeat = data ;
+  });
 
 /**
  * Disable seat by ID
  * @param {String} id - ID of the seat
  */
-const disableSeat = function (id) {
+const disableSeat = (id) => {
   const ele = document.getElementById(id);
   if (ele) {
     ele.setAttribute("sold", true);
@@ -19,8 +32,24 @@ const disableSeat = function (id) {
  * @param {*} e - DOM element
  */
 const onClickSeat = function (e) {
+
   let seatId = e.target.id || "";
-  console.log(`on click seat with ID: ${seatId || "none"}`);
+
+  if(document.getElementById(seatId).hasAttribute("selected") === false){
+    document.getElementById(seatId).setAttribute("selected",true);
+    userSelection.push({ seatId: seatId });
+    console.log(userSelection);
+    //console.log(`on click seat with ID: ${seatId || "none"}`);
+  }
+  
+  else{
+    document.getElementById(seatId).removeAttribute("selected");
+    let elementToBeRemoved = userSelection.find(item => item.seatId === seatId );
+    console.log(elementToBeRemoved);
+    userSelection.splice(userSelection.indexOf(elementToBeRemoved) ,1);
+    console.log(userSelection);
+  } 
+
 };
 
 /**
@@ -44,7 +73,7 @@ const main = function () {
   for (let index = 0; index < eleSeats.length; index++) {
     const ele = eleSeats[index];
     // Register click event only when seat is not-booked
-    if (ele.getAttribute("seat") === true) {
+    if (ele.getAttribute("sold") === true) {
       // Seat is booked
       continue;
     }
