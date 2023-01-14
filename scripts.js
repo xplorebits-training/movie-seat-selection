@@ -6,14 +6,17 @@
 // User seat selection
 const userSelection = [];
 // Seats that are already booked
-const bookedSeat =[];
+let bookedSeat = [];
 
-
-let file = "C:\\Users\\nalammanasa\\Desktop\\Documents\\GitHub\\movie-seat-selection\\BookedSeats.json";
+let file = "BookedSeats.json";
 fetch(file)
-  .then(response =>response.json())
-  .then(function(data){
-    bookedSeat = data ;
+  .then((response) => response.json())
+  .then(function (data) {
+    bookedSeat = data;
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error("here", error);
   });
 
 /**
@@ -32,24 +35,22 @@ const disableSeat = (id) => {
  * @param {*} e - DOM element
  */
 const onClickSeat = function (e) {
-
   let seatId = e.target.id || "";
 
-  if(document.getElementById(seatId).hasAttribute("selected") === false){
-    document.getElementById(seatId).setAttribute("selected",true);
+  if (document.getElementById(seatId).hasAttribute("selected") === false) {
+    document.getElementById(seatId).setAttribute("selected", true);
     userSelection.push({ seatId: seatId });
     console.log(userSelection);
     //console.log(`on click seat with ID: ${seatId || "none"}`);
-  }
-  
-  else{
+  } else {
     document.getElementById(seatId).removeAttribute("selected");
-    let elementToBeRemoved = userSelection.find(item => item.seatId === seatId );
+    let elementToBeRemoved = userSelection.find(
+      (item) => item.seatId === seatId
+    );
     console.log(elementToBeRemoved);
-    userSelection.splice(userSelection.indexOf(elementToBeRemoved) ,1);
+    userSelection.splice(userSelection.indexOf(elementToBeRemoved), 1);
     console.log(userSelection);
-  } 
-
+  }
 };
 
 /**
