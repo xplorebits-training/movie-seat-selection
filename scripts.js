@@ -4,7 +4,7 @@ const userSelection = [];
 // Seats that are already booked
 let bookedSeat = [];
 
-let file = "BookedSeats.json";
+let file = "https://res.cloudinary.com/dd3ewg0jd/raw/upload/v1673842441/BookedSeats_y30hft.json";
 fetch(file)
   .then((response) => response.json())
   .then(function (data) {
