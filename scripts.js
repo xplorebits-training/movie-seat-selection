@@ -5,15 +5,6 @@ const userSelection = [];
 let bookedSeat = [];
 
 let file = "https://res.cloudinary.com/dd3ewg0jd/raw/upload/v1673842441/BookedSeats_y30hft.json";
-fetch(file)
-  .then((response) => response.json())
-  .then(function (data) {
-    bookedSeat = data;
-    console.log(data);
-  })
-  .catch((error) => {
-    console.error("here", error);
-  });
 
 /**
  * Disable seat by ID
@@ -36,17 +27,26 @@ const onClickSeat = function (e) {
   if (document.getElementById(seatId).hasAttribute("selected") === false) {
     document.getElementById(seatId).setAttribute("selected", true);
     userSelection.push({ seatId: seatId });
-    console.log(userSelection);
+    //console.log(userSelection);
     //console.log(`on click seat with ID: ${seatId || "none"}`);
   } else {
     document.getElementById(seatId).removeAttribute("selected");
     let elementToBeRemoved = userSelection.find(
       (item) => item.seatId === seatId
     );
-    console.log(elementToBeRemoved);
+    //console.log(elementToBeRemoved);
     userSelection.splice(userSelection.indexOf(elementToBeRemoved), 1);
-    console.log(userSelection);
+    //console.log(userSelection);
   }
+
+  if( userSelection.length <= 0 ){
+    document.getElementById("book_button").setAttribute("disable", true);
+    document.getElementById("anchor").removeAttribute("href");
+  }else{
+    document.getElementById("book_button").removeAttribute("disable");
+    document.getElementById("anchor").href = "checkout.html";
+  }
+
 };
 
 /**
@@ -65,6 +65,29 @@ const loadUserSelectedSeats = function () {
       document.getElementById(element).setAttribute("selected", true);
     });
   };
+  
+  if( userSelection.length <= 0 ){
+    document.getElementById("book_button").setAttribute("disable", true);
+    document.getElementById("anchor").removeAttribute("href");
+  }else{
+    document.getElementById("book_button").removeAttribute("disable");
+    document.getElementById("anchor").href = "checkout.html";
+  }
+
+}
+
+const enableBookButton = function () {
+
+  let bookButton = document.getElementById("book_button");
+    bookButton.onclick = function(){
+
+    let arr = [];
+    userSelection.forEach ( ( element ) => {
+    arr.push( Object.values( element ) );
+    });
+    localStorage.setItem( "userSelection" , arr );
+  } 
+
 }
 
 const main = function () {
@@ -134,18 +157,13 @@ const checkCollision = function () {
     USSeat.push( Object.values( element ) );
   });
   for ( let i = 0 ; i < BSeat.length ; i++ ){
-
     for ( let j = 0 ; j < USSeat.length ; j++ ){
-
       if( BSeat[i] === USSeat[j] ){
-
         let elementToBeRemoved = userSelection.find(
           (item) => item.seatId === USSeat(j)
         );
         userSelection.splice( userSelection.indexOf(elementToBeRemoved), 1 );
-
       }
-
     }
   }
 }
