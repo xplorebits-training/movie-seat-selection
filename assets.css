@@ -20,7 +20,7 @@ body {
   flex-grow: 1;
 }
 
-.SSUI .book_button {
+.SSUI #book_button {
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
@@ -31,27 +31,41 @@ body {
 
 .SSUI {
   padding: 4px 1px 3px 27px;
-
   color: #ffffff;
 }
 
-.book_button {
+#book_button {
   background-color: #ffffff;
   border-color: #ffffff;
   border-radius: 8px;
   padding: 8px 18px 8px 18px;
   margin-right: 19px;
-
   position: sticky;
   right: 20px;
   font-weight: 600;
   text-align: center;
-
   width: 93px;
   height: 38px;
-
   color: black;
+  cursor: pointer;
+}
 
+#book_button[disable] {
+  background-color: #d9d9d9;
+  border-color: #d9d9d9;
+  pointer-events: none;
+}
+
+#clear {
+  background-color: #3a66ff;
+  border :0px;
+  padding: 8px 18px 8px 18px;
+  margin-right: 10px;
+  right: 20px;
+  text-align: center;
+  width: 93px;
+  height: 38px;
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -85,12 +99,20 @@ body {
   border: 1px solid #000000;
 }
 
+.seat_stretch > .row > .seat[selected] {
+  background-color: #3a66ff;
+  height: 20px;
+  width: 20px;
+  border: 1px solid #000000;
+  cursor: pointer;
+
+}
+
 .seat_stretch > .row > .seat:hover {
   background-color: #3a66ff;
   height: 20px;
   width: 20px;
   border: 1px solid #000000;
   transform: scale(1.2);
-
   cursor: pointer;
 }

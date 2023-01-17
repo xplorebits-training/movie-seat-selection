@@ -1,0 +1,229 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkout</title>
+    <style>
+      body {
+        height: 100%;
+        width: 100%;
+        margin: 0px;
+        min-width: 500px;
+        font-family: "Inter";
+      }
+
+      .navbar {
+        background-color: #3a66ff;
+        display: flex;
+        align-items: center;
+        height: 64px;
+        width: auto;
+        margin: 0 auto;
+      }
+
+      .spacer {
+        flex-grow: 1;
+      }
+
+      .payment {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        text-align: center;
+        line-height: 22px;
+        padding: 4px 1px 3px 27px;
+        color: #ffffff;
+      }
+
+      a{
+        color: black;
+      }
+
+      .back_button {
+
+        background-color: #ffffff;
+        border-color: #ffffff;
+        border-radius: 8px;
+        padding: 8px 18px 8px 18px;
+        margin-right: 19px;
+
+        position: sticky;
+        right: 20px;
+        font-weight: 600;
+        text-align: center;
+
+        width: 93px;
+        height: 38px;
+
+        color: black;
+
+        cursor: pointer;
+      }
+
+      .vertical-spacer1{
+        height: 80px;
+        min-height: 10px;
+      }
+
+      .vertical-spacer2{
+        height: 50px;
+        min-height: 10px;
+      }
+
+      .invoice{
+        display:block;
+        align-items: center;
+        margin:3px 20px;
+      }
+
+      .payment-button{          
+        display:block;
+        margin: auto;        
+        background-color: #3a66ff;
+        color: #ffffff;
+        border-radius: 5px;
+        border-color: #ffffff;
+        font-style: normal;
+        font-size: large;
+        text-align: center;
+        font-weight: lighter;
+        padding: 0px 30px;          
+        height:50px;                  
+        cursor: pointer;
+
+      }
+
+      .head{
+        border: 3px solid #d9d9d9;
+        padding:5px 0px;
+        height:40px;
+        text-align: center;
+        font-size:30px;
+        border-radius: 3px;
+      }
+
+      .information{
+        border: 3px solid #d9d9d9;
+        padding:5px 0px;
+        text-align: center;
+        font-size: large;
+        border-radius: 3px;
+      }
+
+      .ticketsCount{
+        display: flex;
+        align-items: center;
+        margin:3px;
+        border: 3px solid #ffffff;
+        padding:5px 0px;
+        height:25px;
+        min-height:15px;
+        text-align:left;
+      }
+
+      .cost{
+        display: flex;
+        align-items: center;
+        margin:3px;
+        border: 3px solid #ffffff;
+        padding:5px 0px;
+        height:25px;
+        min-height:15px;
+        text-align: left;
+      }
+
+      .gst{
+        display: flex;
+        align-items: center;
+        margin:3px;
+        border: 3px solid #ffffff;
+        padding:5px 0px;
+        height:25px;
+        min-height:15px;
+        text-align: left;
+      }
+
+      .divider{
+        height:1.5px;
+        background-color: #d9d9d9;
+      }
+
+      .total{
+        display: flex;
+        align-items: center;
+        margin: 3px;
+        border: 3px solid #ffffff;
+        padding:5px 0px;
+        height:25px;
+        min-height:15px;
+        text-align: left;
+      }
+    </style>
+</head>
+
+<body>
+
+  <div class="navbar">
+    <div class="payment">PAYMENT</div>
+    <div class="spacer"></div>
+    <button class="back_button" onclick="document.location='index.html'">BACK</button>
+  </div>
+  <div class="vertical-spacer1"></div>
+  <div class="invoice">
+    <div class="head">Payment Summary</div>
+    <div class="vertical-spacer2"></div>
+    <div class="information">
+    <div class="ticketsCount">
+      <div class="ticketNumbers">Tickets Booked : </div>
+      <div class="spacer"></div>
+      <div id="Tickets"></div>
+    </div>
+    <div class="cost">
+      <div class="fareName">Ticket Fare</div>
+      <div class="spacer"></div>
+      <div id="fareValue"></div>
+    </div>
+    <div class="gst">
+      <div class="gstName">18% GST</div>
+      <div class="spacer"></div>
+      <div id="gstValue"></div>
+    </div>
+    <div>
+      <div class="divider"></div>
+    </div>
+    <div class="total">
+      <div class="orderName">Order Total</div>
+      <div class="spacer"></div>
+      <div id="orderValue"></div>
+    </div>
+  </div>
+  <div class="vertical-spacer2"></div>
+  <button class="payment-button">Proceed to Pay</button>
+  <div class="vertical-spacer1"></div>
+  </div>
+
+  <script>
+
+    let array = localStorage.getItem("userSelection").split(",");
+    let length = (array).length ;
+    let ticketsCount = length;
+    let ticketNumbers = localStorage.getItem("userSelection");
+    let price = 120.0;
+    let gst = 0.0;
+    let fare = 0.0;
+    let total = 0.0;
+
+    fare = ticketsCount * price;
+    gst = ( fare * 0.18 ).toFixed(2);
+    total = Number(fare) + Number(gst);
+
+    document.getElementById("Tickets").innerHTML = ticketNumbers ;
+    document.getElementById("fareValue").innerHTML = fare ;
+    document.getElementById("gstValue").innerHTML = gst ;
+    document.getElementById("orderValue").innerHTML = total ;
+
+  </script>
+
+</body>
+</html>
